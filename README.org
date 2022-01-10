@@ -76,6 +76,19 @@ or a mode hook:
 As usual, calling =devdocs-lookup= with a prefix argument redefines
 the selected documents for that specific buffer.
 
+** Use package
+
+If you use use-package, a =devdocs= keyword is provided that will ensure
+documentation is installed and configure the =devdocs-current-docs= variable.
+
+#+begin_src elisp
+(use-package python :devdocs (python-mode "python~3.9"))
+#+end_src
+
+This will call =devdocs-install= to install the =python~3.9= documentation if it
+is not already installed and add a hook to set =devdocs-current-docs= to
+='("python~3.9")= for =python-mode=.
+
 ** Contributing
 
 Discussions, suggestions and code contributions are welcome! Since
